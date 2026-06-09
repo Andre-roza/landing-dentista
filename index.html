@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Lumina Odontologia Premium | Sorrisos que Transformam Vidas</title>
+  <meta name="description" content="Clínica Lumina — Odontologia estética e reabilitadora de alto padrão. Lentes de contato dental, alinhadores invisíveis, implantes e harmonização orofacial. Agende sua avaliação gratuita." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            violet: {
+              950: '#1a0a2e',
+              900: '#2d1050',
+              800: '#3d1a6e',
+              700: '#4f2591',
+              600: '#6b35b8',
+              500: '#8b4fd8',
+            },
+            gold: {
+              100: '#fdf5e0',
+              200: '#f7e5b0',
+              300: '#e8cc7a',
+              400: '#d4ac50',
+              500: '#b8902a',
+              600: '#9a7418',
+            },
+            graphite: {
+              900: '#1c1624',
+              800: '#2a2035',
+              700: '#3d3050',
+              600: '#5a4e6e',
+              500: '#7a6e8e',
+            },
+            offwhite: {
+              50:  '#fdfcff',
+              100: '#f8f6fc',
+              200: '#f2eef8',
+              300: '#eae4f3',
+            },
+          },
+          boxShadow: {
+            'violet-sm': '0 4px 24px -4px rgba(75, 37, 145, 0.15)',
+            'violet-md': '0 8px 40px -8px rgba(75, 37, 145, 0.25)',
+            'violet-lg': '0 20px 60px -12px rgba(75, 37, 145, 0.35)',
+            'gold-sm':   '0 4px 20px -4px rgba(184, 144, 42, 0.20)',
+          },
+          backgroundImage: {
+            'hero-pattern': "radial-gradient(ellipse 80% 60% at 60% 40%, rgba(107,53,184,0.12) 0%, transparent 70%), radial-gradient(ellipse 50% 40% at 20% 80%, rgba(184,144,42,0.06) 0%, transparent 60%)",
+            'violet-gradient': 'linear-gradient(135deg, #2d1050 0%, #1a0a2e 50%, #3d1a6e 100%)',
+            'gold-gradient': 'linear-gradient(90deg, #b8902a 0%, #d4ac50 50%, #e8cc7a 100%)',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.7s ease forwards',
+            'float': 'float 6s ease-in-out infinite',
+            'shimmer': 'shimmer 2.5s linear infinite',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% center' },
+              '100%': { backgroundPosition: '200% center' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* ============================
+       VARIÁVEIS & RESET
+    ============================*/
+    * { box-sizing: border-box; }
+    ::selection { background: rgba(107,53,184,0.2); color: #2d1050; }
+
+    body {
+      font-family: '"Plus Jakarta Sans"', system-ui, sans-serif;
+      color: #1c1624;
+      background-color: #fdfcff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============================
+       DECORATIVE ELEMENTS
+    ============================*/
+    .gold-line {
+      display: inline-block;
+      height: 2px;
+      width: 48px;
+      background: linear-gradient(90deg, #b8902a, #e8cc7a);
+      border-radius: 2px;
+    }
+
+    .gold-dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      background: linear-gradient(135deg, #d4ac50, #e8cc7a);
+      border-radius: 50%;
+    }
+
+    /* ============================
+       SCROLL REVEAL ANIMATION
+    ============================*/
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================
+       HERO
+    ============================*/
+    .hero-section {
+      background-image:
+        radial-gradient(ellipse 80% 60% at 65% 40%, rgba(107,53,184,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 15% 85%, rgba(184,144,42,0.07) 0%, transparent 60%);
+    }
+
+    .hero-badge {
+      background: linear-gradient(135deg, rgba(212,172,80,0.12), rgba(232,204,122,0.06));
+      border: 1px solid rgba(212,172,80,0.35);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2d1050, #4f2591);
+      border: 1px solid transparent;
+      color: #fdf5e0;
+      font-family: '"Plus Jakarta Sans"', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 8px 40px -8px rgba(45,16,80,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #4f2591, #6b35b8);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 48px -8px rgba(45,16,80,0.55), inset 0 1px 0 rgba(255,255,255,0.10);
+    }
+    .btn-primary span { position: relative; z-index: 1; }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1.5px solid rgba(45,16,80,0.25);
+      color: #2d1050;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .btn-secondary:hover {
+      background: rgba(45,16,80,0.05);
+      border-color: rgba(45,16,80,0.45);
+      transform: translateY(-1px);
+    }
+
+    /* ============================
+       FLOATING CARD (HERO)
+    ============================*/
+    .floating-card {
+      animation: float 6s ease-in-out infinite;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212,172,80,0.2);
+      box-shadow: 0 20px 60px -12px rgba(45,16,80,0.18), 0 4px 16px -4px rgba(45,16,80,0.10);
+    }
+    .floating-card-2 { animation-delay: -3s; }
+
+    /* ============================
+       SERVIÇOS CARDS
+    ============================*/
+    .service-card {
+      background: #ffffff;
+      border: 1px solid rgba(234,228,243,0.8);
+      transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #b8902a, #e8cc7a, #b8902a);
+      background-size: 200% auto;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .service-card:hover::before { opacity: 1; animation: shimmer 2.5s linear infinite; }
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(107,53,184,0.15);
+      box-shadow: 0 24px 64px -12px rgba(45,16,80,0.18), 0 8px 24px -8px rgba(45,16,80,0.10);
+    }
+    .service-card .icon-wrap {
+      background: linear-gradient(135deg, rgba(107,53,184,0.08), rgba(184,144,42,0.06));
+      border: 1px solid rgba(212,172,80,0.20);
+      transition: all 0.4s ease;
+    }
+    .service-card:hover .icon-wrap {
+      background: linear-gradient(135deg, rgba(107,53,184,0.14), rgba(184,144,42,0.10));
+      border-color: rgba(212,172,80,0.40);
+    }
+    .service-card .arrow-link {
+      color: #9a7418;
+      transition: all 0.3s ease;
+    }
+    .service-card:hover .arrow-link {
+      color: #4f2591;
+      transform: translateX(4px);
+    }
+
+    /* ============================
+       DIFERENCIAIS
+    ============================*/
+    .diff-violet-bg {
+      background: linear-gradient(135deg, #2d1050 0%, #1a0a2e 50%, #3d1a6e 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .diff-violet-bg::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -10%;
+      width: 60%; height: 80%;
+      background: radial-gradient(ellipse, rgba(107,53,184,0.4) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .diff-violet-bg::after {
+      content: '';
+      position: absolute;
+      bottom: -30%; left: -5%;
+      width: 50%; height: 60%;
+      background: radial-gradient(ellipse, rgba(184,144,42,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .diff-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(212,172,80,0.20);
+      backdrop-filter: blur(8px);
+      transition: all 0.4s ease;
+    }
+    .diff-card:hover {
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(212,172,80,0.40);
+      transform: translateY(-4px);
+    }
+
+    .diff-number {
+      background: linear-gradient(135deg, #b8902a, #e8cc7a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ============================
+       CARROSSEL DE DEPOIMENTOS
+    ============================*/
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .testimonial-card {
+      background: #ffffff;
+      border: 1px solid rgba(234,228,243,0.8);
+      transition: all 0.35s ease;
+    }
+    .testimonial-card:hover {
+      box-shadow: 0 16px 48px -12px rgba(45,16,80,0.14);
+      border-color: rgba(107,53,184,0.15);
+    }
+
+    .carousel-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(45,16,80,0.20);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .carousel-dot.active {
+      background: linear-gradient(135deg, #b8902a, #d4ac50);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    .star-gold { color: #d4ac50; }
+
+    /* ============================
+       AVATAR PLACEHOLDERS
+    ============================*/
+    .avatar-ring {
+      border: 2px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, #b8902a, #e8cc7a) border-box;
+    }
+
+    /* ============================
+       NAVEGAÇÃO
+    ============================*/
+    .nav-glass {
+      background: rgba(253,252,255,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(234,228,243,0.6);
+    }
+    .nav-link {
+      color: #3d3050;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute; bottom: -2px; left: 0; right: 0;
+      height: 1.5px;
+      background: linear-gradient(90deg, #b8902a, #e8cc7a);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .nav-link:hover { color: #2d1050; }
+    .nav-link:hover::after { transform: scaleX(1); }
+
+    /* ============================
+       FOOTER
+    ============================*/
+    .footer-bg {
+      background: linear-gradient(180deg, #1a0a2e 0%, #0f0620 100%);
+      border-top: 1px solid rgba(212,172,80,0.15);
+    }
+
+    .footer-link {
+      color: rgba(255,255,255,0.55);
+      transition: color 0.2s ease;
+      font-size: 0.875rem;
+    }
+    .footer-link:hover { color: #e8cc7a; }
+
+    .social-icon {
+      width: 40px; height: 40px;
+      border: 1px solid rgba(212,172,80,0.25);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.55);
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      border-color: rgba(212,172,80,0.6);
+      color: #e8cc7a;
+      background: rgba(212,172,80,0.08);
+    }
+
+    /* ============================
+       HERO IMAGE
+    ============================*/
+    .hero-img-wrap {
+      border: none;
+      background: transparent;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: inherit;
+    }
+    /* Halo glow atrás da imagem */
+    .hero-img-glow {
+      position: absolute;
+      inset: -20px;
+      border-radius: 2rem;
+      background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(107,53,184,0.22) 0%, transparent 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ============================
+       SEÇÃO TITULO PATTERN
+    ============================*/
+    .section-eyebrow {
+      font-family: '"Plus Jakarta Sans"', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9a7418;
+    }
+
+    /* ============================
+       NÚMERO ESTATÍSTICAS
+    ============================*/
+    .stat-number {
+      font-family: '"Cormorant Garamond"', serif;
+      background: linear-gradient(135deg, #2d1050, #4f2591);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ============================
+       QUOTE ICON
+    ============================*/
+    .quote-icon {
+      color: rgba(212,172,80,0.35);
+      font-size: 5rem;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-offwhite-50">
+
+  <!-- ================================================================
+       NAVEGAÇÃO
+  ================================================================ -->
+  <header id="header" class="nav-glass fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <nav class="flex items-center justify-between h-20" aria-label="Navegação principal">
+
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3" aria-label="Lumina Odontologia - Página Inicial">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center"
+               style="background: linear-gradient(135deg, #2d1050, #4f2591);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C8.5 2 6 4.5 6 8c0 2 .8 3.8 2 5l2 8h4l2-8c1.2-1.2 2-3 2-5 0-3.5-2.5-6-6-6z"
+                    fill="#e8cc7a" opacity="0.9"/>
+              <circle cx="12" cy="8" r="2" fill="white" opacity="0.7"/>
+            </svg>
+          </div>
+          <div>
+            <span class="font-serif text-xl font-semibold text-graphite-900 tracking-tight">Lumina</span>
+            <span class="block text-[10px] font-sans font-500 text-graphite-600 tracking-widest uppercase -mt-0.5" style="color:#9a7418;">Odontologia Premium</span>
+          </div>
+        </a>
+
+        <!-- Menu Desktop -->
+        <ul class="hidden md:flex items-center gap-8" role="list">
+          <li><a href="#servicos" class="nav-link">Especialidades</a></li>
+          <li><a href="#diferenciais" class="nav-link">Sobre & Diferenciais</a></li>
+          <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+
+        <!-- CTA Nav -->
+        <div class="hidden md:flex items-center gap-4">
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener"
+             class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm"
+             id="nav-cta-btn">
+            <span>Agendar Avaliação</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="relative z-10">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Hamburger Mobile -->
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg"
+                aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="hamburger-line w-6 h-0.5 bg-graphite-900 rounded-full transition-all duration-300"></span>
+          <span class="hamburger-line w-5 h-0.5 bg-graphite-900 rounded-full transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-graphite-900 rounded-full transition-all duration-300"></span>
+        </button>
+
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-offwhite-300 bg-white/95 backdrop-blur-xl">
+      <div class="px-6 py-6 flex flex-col gap-4">
+        <a href="#servicos" class="text-graphite-800 font-medium py-2 border-b border-offwhite-200">Especialidades</a>
+        <a href="#diferenciais" class="text-graphite-800 font-medium py-2 border-b border-offwhite-200">Sobre & Diferenciais</a>
+        <a href="#depoimentos" class="text-graphite-800 font-medium py-2 border-b border-offwhite-200">Depoimentos</a>
+        <a href="#contato" class="text-graphite-800 font-medium py-2 border-b border-offwhite-200">Contato</a>
+        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener"
+           class="btn-primary inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm mt-2">
+          <span>Agendar Avaliação Gratuita</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ================================================================
+       HERO
+  ================================================================ -->
+  <main>
+  <section id="hero" class="hero-section relative min-h-screen flex items-center pt-20 overflow-hidden" aria-label="Seção principal">
+
+    <!-- Background orbs decorativos -->
+    <div class="absolute top-1/4 right-1/4 w-96 h-96 rounded-full pointer-events-none"
+         style="background: radial-gradient(ellipse, rgba(107,53,184,0.08) 0%, transparent 70%); transform: translate(50%, -50%);"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-72 h-72 rounded-full pointer-events-none"
+         style="background: radial-gradient(ellipse, rgba(184,144,42,0.07) 0%, transparent 70%); transform: translate(-50%, 50%);"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <div class="grid lg:grid-cols-2 gap-16 items-center py-20 lg:py-28">
+
+        <!-- Conteúdo Textual -->
+        <div class="flex flex-col gap-8">
+
+          <!-- Badge de credencial -->
+          <div class="hero-badge inline-flex items-center gap-2.5 px-4 py-2 rounded-full w-fit reveal">
+            <span class="gold-dot"></span>
+            <span class="text-xs font-semibold tracking-widest uppercase font-sans" style="color:#9a7418;">
+              Odontologia Estética de Referência em SP
+            </span>
+          </div>
+
+          <!-- Título principal -->
+          <div class="reveal reveal-delay-1">
+            <h1 class="font-serif text-5xl lg:text-6xl xl:text-7xl leading-tight font-light" style="color:#1c1624;">
+              O sorriso que<br/>
+              <em class="not-italic font-semibold" style="color: #2d1050;">sempre imaginou</em><br/>
+              <span class="relative inline-block">
+                começa aqui.
+                <span class="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
+                      style="background: linear-gradient(90deg, #b8902a, #e8cc7a);"></span>
+              </span>
+            </h1>
+          </div>
+
+          <!-- Subtítulo / Proposta de Valor -->
+          <p class="text-lg leading-relaxed max-w-xl reveal reveal-delay-2" style="color:#5a4e6e; font-weight:300;">
+            Na Lumina, unimos tecnologia de ponta e arte dental para criar
+            sorrisos únicos que revelam sua melhor versão. Cada detalhe é pensado
+            para transformar não apenas seu sorriso, mas sua autoestima.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-4 items-center reveal reveal-delay-3">
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener"
+               id="hero-cta-primary"
+               class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-base">
+              <span>Agendar Avaliação Gratuita</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="relative z-10">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#servicos" id="hero-cta-secondary"
+               class="btn-secondary inline-flex items-center gap-2 px-7 py-4 rounded-2xl text-base">
+              <span>Ver Especialidades</span>
+            </a>
+          </div>
+
+          <!-- Estatísticas rápidas -->
+          <div class="flex gap-8 pt-4 reveal reveal-delay-4">
+            <div>
+              <div class="stat-number font-serif text-3xl font-semibold">+2.400</div>
+              <div class="text-xs font-medium tracking-wide uppercase mt-0.5" style="color:#7a6e8e;">Sorrisos Transformados</div>
+            </div>
+            <div class="w-px bg-offwhite-300"></div>
+            <div>
+              <div class="stat-number font-serif text-3xl font-semibold">12 Anos</div>
+              <div class="text-xs font-medium tracking-wide uppercase mt-0.5" style="color:#7a6e8e;">de Excelência Clínica</div>
+            </div>
+            <div class="w-px bg-offwhite-300"></div>
+            <div>
+              <div class="stat-number font-serif text-3xl font-semibold">98%</div>
+              <div class="text-xs font-medium tracking-wide uppercase mt-0.5" style="color:#7a6e8e;">Satisfação Comprovada</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Coluna Visual -->
+        <div class="relative flex items-center justify-center lg:justify-end">
+
+          <!-- Imagem principal Hero -->
+          <div class="relative">
+            <!-- Glow atrás -->
+            <div class="hero-img-glow"></div>
+            <!-- Frame decorativo -->
+            <div class="absolute -inset-3 rounded-3xl z-0 pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(212,172,80,0.18) 0%, rgba(107,53,184,0.10) 100%); border-radius: 2rem;"></div>
+            <div class="hero-img-wrap relative w-80 h-[480px] lg:w-[400px] lg:h-[540px] rounded-3xl overflow-hidden z-10" style="box-shadow: 0 32px 80px -16px rgba(45,16,80,0.35), 0 8px 24px -8px rgba(45,16,80,0.20);">
+              <img src="img_hero.png" alt="Mulher com sorriso perfeito após tratamento na Clínica Lumina" loading="eager" />
+              <!-- Overlay gradiente sutil inferior -->
+              <div class="absolute inset-x-0 bottom-0 h-32 pointer-events-none z-10"
+                   style="background: linear-gradient(to top, rgba(45,16,80,0.18), transparent);"></div>
+              <!-- Badge no canto inferior -->
+              <div class="absolute bottom-5 left-5 right-5 z-20 flex items-center gap-3 px-4 py-3 rounded-2xl"
+                   style="background: rgba(255,255,255,0.90); backdrop-filter: blur(12px); border: 1px solid rgba(212,172,80,0.25);">
+                <div class="flex gap-0.5">
+                  <span style="color:#d4ac50; font-size:12px;">★★★★★</span>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold" style="color:#1c1624;">+2.400 sorrisos transformados</p>
+                  <p class="text-[10px]" style="color:#7a6e8e;">Avaliação média: 5.0 ⭐</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Card 1 — Avaliação 3D -->
+          <div class="floating-card absolute -left-4 lg:-left-12 top-12 rounded-2xl p-4 w-48">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                   style="background: linear-gradient(135deg, #2d1050, #4f2591);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="3" fill="#e8cc7a"/>
+                  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                        stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold" style="color:#1c1624;">Escaneamento 3D</p>
+                <p class="text-[10px]" style="color:#7a6e8e;">Tecnologia iTero</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-1">
+              <div class="h-1 flex-1 rounded-full" style="background: linear-gradient(90deg, #2d1050, #6b35b8);"></div>
+              <span class="text-[10px] font-semibold" style="color:#2d1050;">100%</span>
+            </div>
+          </div>
+
+          <!-- Floating Card 2 — Avaliação -->
+          <div class="floating-card floating-card-2 absolute -right-4 lg:-right-8 bottom-16 rounded-2xl p-4 w-52">
+            <div class="flex items-center gap-1 mb-1">
+              <span class="star-gold text-sm">★★★★★</span>
+            </div>
+            <p class="text-xs font-medium leading-snug mb-2" style="color:#1c1624;">"Resultado além do que imaginava. Perfeito!"</p>
+            <div class="flex items-center gap-2">
+              <div class="avatar-ring w-7 h-7 rounded-full overflow-hidden flex items-center justify-center"
+                   style="background: linear-gradient(135deg, #eae4f3, #d0c4e8);">
+                <span class="text-xs font-semibold" style="color:#4f2591;">A</span>
+              </div>
+              <div>
+                <p class="text-[10px] font-semibold" style="color:#1c1624;">Ana Carvalho</p>
+                <p class="text-[9px]" style="color:#7a6e8e;">Lentes de Contato Dental</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave decorativo inferior -->
+    <div class="absolute bottom-0 left-0 right-0 pointer-events-none" style="height:60px;">
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:100%;">
+        <path d="M0 60V30C180 0 360 0 540 20S900 50 1080 35 1440 10 1440 10V60H0Z" fill="#f8f6fc"/>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       ESPECIALIDADES / SERVIÇOS
+  ================================================================ -->
+  <section id="servicos" class="py-28 lg:py-36" style="background:#f8f6fc;" aria-label="Nossas Especialidades">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <!-- Cabeçalho da seção -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+        <div class="section-eyebrow mb-4">Nossas Especialidades</div>
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <div class="gold-line"></div>
+          <div class="gold-dot"></div>
+          <div class="gold-line"></div>
+        </div>
+        <h2 class="font-serif text-4xl lg:text-5xl font-light leading-tight mb-6" style="color:#1c1624;">
+          Arte e Ciência a serviço<br/>
+          <em class="not-italic font-semibold" style="color:#2d1050;">do seu sorriso</em>
+        </h2>
+        <p class="text-base leading-relaxed" style="color:#5a4e6e; font-weight:300;">
+          Oferecemos soluções completas em odontologia estética e reabilitadora,
+          com protocolos internacionais e uma equipe altamente especializada.
+        </p>
+      </div>
+
+      <!-- Grid de Cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+        <!-- Card 1: Lentes de Contato Dental -->
+        <article class="service-card rounded-3xl p-8 flex flex-col gap-6 reveal" id="service-lentes">
+          <div class="icon-wrap w-14 h-14 rounded-2xl flex items-center justify-center">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z" stroke="#b8902a" stroke-width="1.5"/>
+              <path d="M12 7v5l3 3" stroke="#4f2591" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="2" fill="#b8902a" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="flex flex-col gap-3 flex-1">
+            <h3 class="font-serif text-xl font-semibold leading-snug" style="color:#1c1624;">Estética Dental</h3>
+            <p class="text-sm font-semibold tracking-wide" style="color:#9a7418;">Lentes de Contato Dental</p>
+            <p class="text-sm leading-relaxed flex-1" style="color:#5a4e6e; font-weight:300;">
+              Facetas ultrafinas de porcelana que transformam cor, forma e tamanho dos dentes
+              com resultado natural e duradouro. Sem desgaste excessivo do esmalte.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 arrow-link text-sm font-semibold cursor-pointer">
+            <span>Saiba mais</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </article>
+
+        <!-- Card 2: Ortodontia Invisível -->
+        <article class="service-card rounded-3xl p-8 flex flex-col gap-6 reveal reveal-delay-1" id="service-alinhadores">
+          <div class="icon-wrap w-14 h-14 rounded-2xl flex items-center justify-center">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="8" width="16" height="10" rx="3" stroke="#b8902a" stroke-width="1.5"/>
+              <path d="M7 11h2M11 11h2M15 11h2" stroke="#4f2591" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="#b8902a" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="flex flex-col gap-3 flex-1">
+            <h3 class="font-serif text-xl font-semibold leading-snug" style="color:#1c1624;">Ortodontia Invisível</h3>
+            <p class="text-sm font-semibold tracking-wide" style="color:#9a7418;">Alinhadores Personalizados</p>
+            <p class="text-sm leading-relaxed flex-1" style="color:#5a4e6e; font-weight:300;">
+              Corrija o alinhamento dos seus dentes de forma discreta e confortável
+              com alinhadores transparentes personalizados e planejamento digital 3D.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 arrow-link text-sm font-semibold cursor-pointer">
+            <span>Saiba mais</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </article>
+
+        <!-- Card 3: Implantodontia -->
+        <article class="service-card rounded-3xl p-8 flex flex-col gap-6 reveal reveal-delay-2" id="service-implantes">
+          <div class="icon-wrap w-14 h-14 rounded-2xl flex items-center justify-center">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3v18M9 6h6M9 9h6M10 12h4M10.5 15h3M11 18h2" stroke="#b8902a" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M8 6C8 4.34 9.79 3 12 3s4 1.34 4 3" stroke="#4f2591" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="flex flex-col gap-3 flex-1">
+            <h3 class="font-serif text-xl font-semibold leading-snug" style="color:#1c1624;">Implantodontia</h3>
+            <p class="text-sm font-semibold tracking-wide" style="color:#9a7418;">Implantes Avançados</p>
+            <p class="text-sm leading-relaxed flex-1" style="color:#5a4e6e; font-weight:300;">
+              Recupere a função e a estética com implantes de titânio de última geração.
+              Planejamento cirúrgico guiado por tomografia e próteses biomiméticas.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 arrow-link text-sm font-semibold cursor-pointer">
+            <span>Saiba mais</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </article>
+
+        <!-- Card 4: Harmonização Orofacial -->
+        <article class="service-card rounded-3xl p-8 flex flex-col gap-6 reveal reveal-delay-3" id="service-harmonizacao">
+          <div class="icon-wrap w-14 h-14 rounded-2xl flex items-center justify-center">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="#b8902a" stroke-width="1.5"/>
+              <path d="M8 15s1.5 2 4 2 4-2 4-2" stroke="#4f2591" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M9 10h.01M15 10h.01" stroke="#b8902a" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="flex flex-col gap-3 flex-1">
+            <h3 class="font-serif text-xl font-semibold leading-snug" style="color:#1c1624;">Harmonização Facial</h3>
+            <p class="text-sm font-semibold tracking-wide" style="color:#9a7418;">Orofacial & Estética Facial</p>
+            <p class="text-sm leading-relaxed flex-1" style="color:#5a4e6e; font-weight:300;">
+              Procedimentos minimamente invasivos para equilibrar e harmonizar os traços
+              faciais — preenchimentos, toxina botulínica e bioestimuladores de colágeno.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 arrow-link text-sm font-semibold cursor-pointer">
+            <span>Saiba mais</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- CTA Secundário -->
+      <div class="text-center mt-14 reveal">
+        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" id="servicos-cta-btn"
+           class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-sm">
+          <span>Descobrir qual tratamento é ideal para mim</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="relative z-10">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       DIFERENCIAIS / SOBRE
+  ================================================================ -->
+  <section id="diferenciais" class="diff-violet-bg py-28 lg:py-36 relative" aria-label="Nossos Diferenciais">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
+      <!-- Cabeçalho -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+        <div class="section-eyebrow mb-4" style="color:#e8cc7a; opacity:0.8;">Por que escolher a Lumina</div>
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <div class="gold-line"></div>
+          <div class="gold-dot"></div>
+          <div class="gold-line"></div>
+        </div>
+        <h2 class="font-serif text-4xl lg:text-5xl font-light leading-tight" style="color:#fdf5e0;">
+          Experiência que<br/>
+          <em class="not-italic font-semibold" style="background: linear-gradient(90deg, #d4ac50, #e8cc7a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">vai além do tratamento</em>
+        </h2>
+      </div>
+
+      <!-- Grid de Diferenciais -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+
+        <!-- Diferencial 1 -->
+        <div class="diff-card rounded-3xl p-8 reveal" id="diff-tecnologia">
+          <div class="mb-5">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-4"
+                 style="background: rgba(232,204,122,0.12); border: 1px solid rgba(232,204,122,0.25);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-semibold mb-2" style="color:#fdf5e0;">Escaneamento Digital 3D</h3>
+            <p class="text-sm leading-relaxed" style="color:rgba(253,245,224,0.65); font-weight:300;">
+              Utilizamos o scanner intraoral <strong style="color:#e8cc7a; font-weight:500;">iTero Element 5D</strong> para mapeamento
+              completo da sua boca em minutos — sem moldagens desconfortáveis, com precisão milimétrica para planejamento digital do seu sorriso ideal.
+            </p>
+          </div>
+        </div>
+
+        <!-- Diferencial 2 -->
+        <div class="diff-card rounded-3xl p-8 reveal reveal-delay-1" id="diff-experiencia">
+          <div class="mb-5">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-4"
+                 style="background: rgba(232,204,122,0.12); border: 1px solid rgba(232,204,122,0.25);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                      stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-semibold mb-2" style="color:#fdf5e0;">Experiência do Paciente</h3>
+            <p class="text-sm leading-relaxed" style="color:rgba(253,245,224,0.65); font-weight:300;">
+              Desde a recepção até o pós-tratamento, cada contato é pensado para que você se sinta acolhido.
+              Ambiente climatizado, música relaxante, acompanhamento personalizado e atendimento humanizado em cada consulta.
+            </p>
+          </div>
+        </div>
+
+        <!-- Diferencial 3 -->
+        <div class="diff-card rounded-3xl p-8 reveal reveal-delay-2" id="diff-protocolo">
+          <div class="mb-5">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-4"
+                 style="background: rgba(232,204,122,0.12); border: 1px solid rgba(232,204,122,0.25);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 11l3 3L22 4" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-semibold mb-2" style="color:#fdf5e0;">Protocolos Internacionais</h3>
+            <p class="text-sm leading-relaxed" style="color:rgba(253,245,224,0.65); font-weight:300;">
+              Todos os tratamentos seguem protocolos validados pela literatura científica internacional,
+              com materiais cerâmicos de alta performance e técnicas aprendidas nos maiores centros de Odontologia do mundo.
+            </p>
+          </div>
+        </div>
+
+        <!-- Diferencial 4 -->
+        <div class="diff-card rounded-3xl p-8 reveal reveal-delay-1" id="diff-previsibilidade">
+          <div class="mb-5">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-4"
+                 style="background: rgba(232,204,122,0.12); border: 1px solid rgba(232,204,122,0.25);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="3" width="20" height="14" rx="2" stroke="#e8cc7a" stroke-width="1.5"/>
+                <path d="M8 21h8M12 17v4" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M7 8h10M7 11h6" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-semibold mb-2" style="color:#fdf5e0;">Smile Design Digital</h3>
+            <p class="text-sm leading-relaxed" style="color:rgba(253,245,224,0.65); font-weight:300;">
+              Antes de qualquer intervenção, você visualiza o resultado final em simulação digital personalizada.
+              Planejar, revisar e aprovar o seu novo sorriso antes do tratamento garante 100% de previsibilidade.
+            </p>
+          </div>
+        </div>
+
+        <!-- Diferencial 5 -->
+        <div class="diff-card rounded-3xl p-8 reveal reveal-delay-2" id="diff-especialistas">
+          <div class="mb-5">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-4"
+                 style="background: rgba(232,204,122,0.12); border: 1px solid rgba(232,204,122,0.25);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="9" cy="7" r="4" stroke="#e8cc7a" stroke-width="1.5"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-semibold mb-2" style="color:#fdf5e0;">Equipe Multiespecialista</h3>
+            <p class="text-sm leading-relaxed" style="color:rgba(253,245,224,0.65); font-weight:300;">
+              Nossa equipe reúne especialistas em Prótese, Ortodontia, Implantodontia e Harmonização Orofacial,
+              todos trabalhando de forma integrada para entregar resultados completos e harmônicos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Diferencial 6 -->
+        <div class="diff-card rounded-3xl p-8 reveal reveal-delay-3" id="diff-sigilo">
+          <div class="mb-5">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-4"
+                 style="background: rgba(232,204,122,0.12); border: 1px solid rgba(232,204,122,0.25);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="11" width="18" height="11" rx="2" stroke="#e8cc7a" stroke-width="1.5"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="12" cy="16" r="1.5" fill="#e8cc7a"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl font-semibold mb-2" style="color:#fdf5e0;">Privacidade & Conforto</h3>
+            <p class="text-sm leading-relaxed" style="color:rgba(253,245,224,0.65); font-weight:300;">
+              Sala de atendimento VIP individual, sem interrupções. Atendimento em horários exclusivos e
+              flexíveis para se adequar à sua agenda, com total discrição para pacientes que valorizam privacidade.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Galeria Visual da Clínica -->
+      <div class="grid md:grid-cols-2 gap-6 mb-24 reveal">
+
+        <!-- Foto Ambiente -->
+        <div class="relative rounded-3xl overflow-hidden group" style="height: 280px;">
+          <img src="img_clinica.png"
+               alt="Interior sofisticado da Clínica Lumina Odontologia Premium"
+               loading="lazy"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <!-- Overlay sempre presente -->
+          <div class="absolute inset-0" style="background: linear-gradient(160deg, rgba(20,6,40,0.35) 0%, rgba(45,16,80,0.60) 100%);"></div>
+          <!-- Texto sobre a imagem -->
+          <div class="absolute bottom-6 left-6 right-6">
+            <p class="font-serif text-xl font-semibold mb-1" style="color:#fdf5e0;">Ambiente Exclusivo</p>
+            <p class="text-sm" style="color:rgba(253,245,224,0.65); font-weight:300;">Espaço projetado para seu máximo conforto e privacidade</p>
+          </div>
+          <!-- Ícone decorativo -->
+          <div class="absolute top-5 right-5 w-9 h-9 rounded-xl flex items-center justify-center"
+               style="background: rgba(212,172,80,0.18); border: 1px solid rgba(212,172,80,0.30);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="#e8cc7a" stroke-width="1.5"/><path d="M9 22V12h6v10" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+
+        <!-- Foto Tecnologia 3D -->
+        <div class="relative rounded-3xl overflow-hidden group" style="height: 280px;">
+          <img src="img_scan3d.png"
+               alt="Scanner 3D iTero Element para diagnóstico digital avançado na Clínica Lumina"
+               loading="lazy"
+               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <!-- Overlay sempre presente -->
+          <div class="absolute inset-0" style="background: linear-gradient(160deg, rgba(20,6,40,0.30) 0%, rgba(45,16,80,0.65) 100%);"></div>
+          <!-- Texto sobre a imagem -->
+          <div class="absolute bottom-6 left-6 right-6">
+            <p class="font-serif text-xl font-semibold mb-1" style="color:#fdf5e0;">Tecnologia iTero 5D</p>
+            <p class="text-sm" style="color:rgba(253,245,224,0.65); font-weight:300;">Escaneamento digital 3D com precisão milimétrica</p>
+          </div>
+          <!-- Badge Tecnologia -->
+          <div class="absolute top-5 right-5 px-3 py-1.5 rounded-full"
+               style="background: rgba(212,172,80,0.18); border: 1px solid rgba(212,172,80,0.30);">
+            <span class="text-xs font-semibold" style="color:#e8cc7a;">iTero Element 5D</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bio do Dentista Chefe -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Foto Dra. Isabela -->
+        <div class="reveal flex justify-center lg:justify-start">
+          <div class="relative">
+            <!-- Decorative ring -->
+            <div class="absolute -inset-3 rounded-3xl pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(212,172,80,0.20), rgba(107,53,184,0.12)); border-radius: 2rem;"></div>
+            <div class="relative w-64 h-80 lg:w-72 lg:h-[360px] rounded-3xl overflow-hidden z-10"
+                 style="box-shadow: 0 24px 64px -12px rgba(10,4,20,0.55), 0 4px 16px -4px rgba(10,4,20,0.30); border: 1px solid rgba(212,172,80,0.20);">
+              <img src="img_dra.png"
+                   alt="Dra. Isabela Monteiro, especialista em Odontologia Estética na Clínica Lumina"
+                   loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover; object-position: center top;" />
+              <!-- Overlay gradiente inferior -->
+              <div class="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
+                   style="background: linear-gradient(to top, rgba(20,6,40,0.75), transparent);"></div>
+              <!-- Nome sobre a imagem -->
+              <div class="absolute bottom-4 left-4 right-4">
+                <p class="font-serif text-base font-semibold" style="color:#fdf5e0;">Dra. Isabela Monteiro</p>
+                <p class="text-xs tracking-wider" style="color:#e8cc7a;">CRO-SP 98.765</p>
+              </div>
+            </div>
+            <!-- Badge flutuante Experiência -->
+            <div class="absolute -bottom-5 -right-5 rounded-2xl px-4 py-3 z-20"
+                 style="background: rgba(255,255,255,0.10); border: 1px solid rgba(212,172,80,0.35); backdrop-filter: blur(16px);">
+              <div class="diff-number font-serif text-2xl font-semibold">+12</div>
+              <div class="text-xs" style="color:rgba(253,245,224,0.65);">Anos de Experiência</div>
+            </div>
+            <!-- Badge flutuante Especialista -->
+            <div class="absolute -top-5 -left-5 rounded-2xl px-3 py-2 z-20"
+                 style="background: rgba(255,255,255,0.10); border: 1px solid rgba(212,172,80,0.25); backdrop-filter: blur(16px);">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0"
+                     style="background: linear-gradient(135deg, #b8902a, #e8cc7a);">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#1a0a2e"/>
+                  </svg>
+                </div>
+                <span class="text-xs font-semibold" style="color:#fdf5e0;">Gold Provider</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio texto -->
+        <div class="reveal reveal-delay-1 flex flex-col gap-6">
+          <div>
+            <div class="section-eyebrow mb-3" style="color:#e8cc7a; opacity:0.8;">Dentista Responsável</div>
+            <h3 class="font-serif text-3xl lg:text-4xl font-light leading-snug" style="color:#fdf5e0;">
+              Dra. Isabela Monteiro<br/>
+              <em class="not-italic font-semibold text-2xl" style="background: linear-gradient(90deg, #d4ac50, #e8cc7a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Especialista em Estética Dental</em>
+            </h3>
+          </div>
+          <p class="text-sm leading-relaxed" style="color:rgba(253,245,224,0.70); font-weight:300;">
+            Formada pela <strong style="color:#fdf5e0; font-weight:500;">USP – Universidade de São Paulo</strong> com especialização em
+            Prótese Dentária e Estética pela Accademia Italiana di Odontoiatria Estetica (Milão, Itália),
+            a Dra. Isabela acumula mais de 12 anos dedicados exclusivamente à transformação de sorrisos.
+          </p>
+          <p class="text-sm leading-relaxed" style="color:rgba(253,245,224,0.70); font-weight:300;">
+            Palestrante em congressos nacionais e internacionais, ela é referência em Lentes de Contato Dental
+            e Smile Design Digital. Sua filosofia combina rigor técnico, sensibilidade artística e escuta ativa —
+            porque cada sorriso conta uma história única e merece ser tratado como tal.
+          </p>
+
+          <!-- Credenciais -->
+          <div class="flex flex-wrap gap-3">
+            <span class="text-xs px-3 py-1.5 rounded-full font-medium"
+                  style="background: rgba(232,204,122,0.12); border: 1px solid rgba(232,204,122,0.25); color:#e8cc7a;">
+              Especialista CFO — Prótese Dentária
+            </span>
+            <span class="text-xs px-3 py-1.5 rounded-full font-medium"
+                  style="background: rgba(232,204,122,0.12); border: 1px solid rgba(232,204,122,0.25); color:#e8cc7a;">
+              Certificada em Harmonização Orofacial
+            </span>
+            <span class="text-xs px-3 py-1.5 rounded-full font-medium"
+                  style="background: rgba(232,204,122,0.12); border: 1px solid rgba(232,204,122,0.25); color:#e8cc7a;">
+              Invisalign Gold Provider
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       DEPOIMENTOS
+  ================================================================ -->
+  <section id="depoimentos" class="py-28 lg:py-36" style="background:#fdfcff;" aria-label="Depoimentos de Pacientes">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <!-- Cabeçalho -->
+      <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+        <div class="section-eyebrow mb-4">Histórias Reais</div>
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <div class="gold-line"></div>
+          <div class="gold-dot"></div>
+          <div class="gold-line"></div>
+        </div>
+        <h2 class="font-serif text-4xl lg:text-5xl font-light leading-tight mb-6" style="color:#1c1624;">
+          Vidas transformadas.<br/>
+          <em class="not-italic font-semibold" style="color:#2d1050;">Sorrisos que falam.</em>
+        </h2>
+        <p class="text-base leading-relaxed" style="color:#5a4e6e; font-weight:300;">
+          Cada depoimento é uma prova real de que investir no sorriso vai muito além da estética —
+          é sobre confiança, qualidade de vida e bem-estar.
+        </p>
+      </div>
+
+      <!-- Carrossel -->
+      <div class="relative overflow-hidden" id="testimonials-carousel" aria-label="Carrossel de depoimentos">
+        <div class="carousel-track" id="carousel-track">
+
+          <!-- Slide 1 (3 cards) -->
+          <div class="w-full flex-shrink-0">
+            <div class="grid md:grid-cols-3 gap-6">
+
+              <!-- Depoimento 1 -->
+              <article class="testimonial-card rounded-3xl p-8 flex flex-col gap-5" id="testimonial-1">
+                <div class="quote-icon select-none" aria-hidden="true">"</div>
+                <div class="-mt-8 flex flex-col gap-4 flex-1">
+                  <div class="flex gap-1 star-gold">★★★★★</div>
+                  <p class="text-sm leading-relaxed flex-1 italic font-light" style="color:#3d3050;">
+                    "Eu nunca sorria de boca aberta em fotos — tinha vergonha dos meus dentes. Depois das lentes de contato
+                    da Dra. Isabela, não consigo parar de sorrir. Em apenas dois atendimentos, minha vida mudou.
+                    O resultado é tão natural que ninguém acredita que são facetas!"
+                  </p>
+                  <div class="flex items-center gap-3 pt-2 border-t border-offwhite-200">
+                    <div class="avatar-ring w-10 h-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0"
+                         style="background: linear-gradient(135deg, #eae4f3, #d0c4e8);">
+                      <span class="font-serif text-base font-semibold" style="color:#4f2591;">A</span>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold" style="color:#1c1624;">Ana Carvalho</p>
+                      <p class="text-xs" style="color:#9a7418;">Lentes de Contato Dental · São Paulo, SP</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Depoimento 2 -->
+              <article class="testimonial-card rounded-3xl p-8 flex flex-col gap-5" id="testimonial-2">
+                <div class="quote-icon select-none" aria-hidden="true">"</div>
+                <div class="-mt-8 flex flex-col gap-4 flex-1">
+                  <div class="flex gap-1 star-gold">★★★★★</div>
+                  <p class="text-sm leading-relaxed flex-1 italic font-light" style="color:#3d3050;">
+                    "Optei pelos alinhadores invisíveis por conta do trabalho — não poderia usar aparelho fixo.
+                    Em 14 meses, meu sorriso foi completamente corrigido sem ninguém perceber que eu estava
+                    em tratamento. A tecnologia de acompanhamento digital é incrível."
+                  </p>
+                  <div class="flex items-center gap-3 pt-2 border-t border-offwhite-200">
+                    <div class="avatar-ring w-10 h-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0"
+                         style="background: linear-gradient(135deg, #e8f0e8, #c4d8c4);">
+                      <span class="font-serif text-base font-semibold" style="color:#2d6e2d;">R</span>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold" style="color:#1c1624;">Rafael Mendonça</p>
+                      <p class="text-xs" style="color:#9a7418;">Ortodontia Invisível · Alphaville, SP</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Depoimento 3 -->
+              <article class="testimonial-card rounded-3xl p-8 flex flex-col gap-5" id="testimonial-3">
+                <div class="quote-icon select-none" aria-hidden="true">"</div>
+                <div class="-mt-8 flex flex-col gap-4 flex-1">
+                  <div class="flex gap-1 star-gold">★★★★★</div>
+                  <p class="text-sm leading-relaxed flex-1 italic font-light" style="color:#3d3050;">
+                    "Perdi um dente em acidente e fiquei anos sem sorriso. O implante na Lumina foi cirúrgico e
+                    indolor — guiado por computador, sem cortes. A prótese ficou idêntica aos outros dentes.
+                    Hoje me sinto completa novamente. Recomendo sem hesitar."
+                  </p>
+                  <div class="flex items-center gap-3 pt-2 border-t border-offwhite-200">
+                    <div class="avatar-ring w-10 h-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0"
+                         style="background: linear-gradient(135deg, #f0e8e8, #d8c4c4);">
+                      <span class="font-serif text-base font-semibold" style="color:#6e2d2d;">M</span>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold" style="color:#1c1624;">Mariana Fonseca</p>
+                      <p class="text-xs" style="color:#9a7418;">Implantodontia Avançada · Santos, SP</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Slide 2 (3 cards) -->
+          <div class="w-full flex-shrink-0">
+            <div class="grid md:grid-cols-3 gap-6">
+
+              <!-- Depoimento 4 -->
+              <article class="testimonial-card rounded-3xl p-8 flex flex-col gap-5" id="testimonial-4">
+                <div class="quote-icon select-none" aria-hidden="true">"</div>
+                <div class="-mt-8 flex flex-col gap-4 flex-1">
+                  <div class="flex gap-1 star-gold">★★★★★</div>
+                  <p class="text-sm leading-relaxed flex-1 italic font-light" style="color:#3d3050;">
+                    "A harmonização orofacial mudou minha relação com o espelho. Não queria nada artificial —
+                    e a Dra. Isabela respeitou completamente meu rosto. O resultado realçou meus traços naturais
+                    de forma muito sutil e elegante. Me sinto eu mesma, só que melhor."
+                  </p>
+                  <div class="flex items-center gap-3 pt-2 border-t border-offwhite-200">
+                    <div class="avatar-ring w-10 h-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0"
+                         style="background: linear-gradient(135deg, #e8eaf0, #c4c8d8);">
+                      <span class="font-serif text-base font-semibold" style="color:#2d3070;">C</span>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold" style="color:#1c1624;">Camila Rocha</p>
+                      <p class="text-xs" style="color:#9a7418;">Harmonização Orofacial · Campinas, SP</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Depoimento 5 -->
+              <article class="testimonial-card rounded-3xl p-8 flex flex-col gap-5" id="testimonial-5">
+                <div class="quote-icon select-none" aria-hidden="true">"</div>
+                <div class="-mt-8 flex flex-col gap-4 flex-1">
+                  <div class="flex gap-1 star-gold">★★★★★</div>
+                  <p class="text-sm leading-relaxed flex-1 italic font-light" style="color:#3d3050;">
+                    "O que mais me surpreendeu foi o Smile Design: vi o meu sorriso novo antes de começar.
+                    Deu uma segurança enorme saber exatamente o que esperava. O atendimento é excepcional,
+                    ambiente muito sofisticado e a equipe é absolutamente atenciosa."
+                  </p>
+                  <div class="flex items-center gap-3 pt-2 border-t border-offwhite-200">
+                    <div class="avatar-ring w-10 h-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0"
+                         style="background: linear-gradient(135deg, #e8f0e8, #c4d8c4);">
+                      <span class="font-serif text-base font-semibold" style="color:#2d6e40;">T</span>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold" style="color:#1c1624;">Thiago Alves</p>
+                      <p class="text-xs" style="color:#9a7418;">Smile Design · São Paulo, SP</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Depoimento 6 -->
+              <article class="testimonial-card rounded-3xl p-8 flex flex-col gap-5" id="testimonial-6">
+                <div class="quote-icon select-none" aria-hidden="true">"</div>
+                <div class="-mt-8 flex flex-col gap-4 flex-1">
+                  <div class="flex gap-1 star-gold">★★★★★</div>
+                  <p class="text-sm leading-relaxed flex-1 italic font-light" style="color:#3d3050;">
+                    "Fui indicada por uma amiga e hoje indiquei mais cinco pessoas. O nível de detalhe,
+                    atenção e cuidado é algo que raramente se encontra. Parece que estão esculpindo uma
+                    obra de arte — e no final, é exatamente isso que você tem: um sorriso único."
+                  </p>
+                  <div class="flex items-center gap-3 pt-2 border-t border-offwhite-200">
+                    <div class="avatar-ring w-10 h-10 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0"
+                         style="background: linear-gradient(135deg, #f0e8f0, #d8c4d8);">
+                      <span class="font-serif text-base font-semibold" style="color:#6e2d6e;">L</span>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold" style="color:#1c1624;">Larissa Drummond</p>
+                      <p class="text-xs" style="color:#9a7418;">Lentes de Contato · Barueri, SP</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Controles do carrossel -->
+        <div class="flex items-center justify-center gap-6 mt-12">
+          <button id="carousel-prev" aria-label="Depoimento anterior"
+                  class="w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300"
+                  style="border-color: rgba(45,16,80,0.20); color:#2d1050;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="flex items-center gap-2" id="carousel-dots" role="tablist" aria-label="Slides do carrossel">
+            <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Slide 1" data-index="0"></button>
+            <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2" data-index="1"></button>
+          </div>
+
+          <button id="carousel-next" aria-label="Próximo depoimento"
+                  class="w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300"
+                  style="border-color: rgba(45,16,80,0.20); color:#2d1050;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       CTA FINAL BANNER
+  ================================================================ -->
+  <section class="py-24 relative overflow-hidden" aria-label="Chamada para ação final"
+           style="background: linear-gradient(135deg, #2d1050 0%, #1a0a2e 60%, #3d1a6e 100%);">
+    <!-- Orb decorativo -->
+    <div class="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none opacity-20"
+         style="background: radial-gradient(ellipse, rgba(212,172,80,0.6), transparent); transform: translate(30%, -30%);"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none opacity-15"
+         style="background: radial-gradient(ellipse, rgba(107,53,184,0.8), transparent); transform: translate(-30%, 30%);"></div>
+
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10 reveal">
+      <div class="section-eyebrow mb-4" style="color:#e8cc7a; opacity:0.8;">Dê o primeiro passo</div>
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <div class="gold-line"></div>
+        <div class="gold-dot"></div>
+        <div class="gold-line"></div>
+      </div>
+      <h2 class="font-serif text-4xl lg:text-5xl xl:text-6xl font-light leading-tight mb-6" style="color:#fdf5e0;">
+        Seu sorriso dos sonhos<br/>
+        <em class="not-italic font-semibold" style="background: linear-gradient(90deg, #d4ac50, #e8cc7a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">está a uma consulta de distância.</em>
+      </h2>
+      <p class="text-base leading-relaxed mb-12 max-w-xl mx-auto" style="color:rgba(253,245,224,0.65); font-weight:300;">
+        Agende sua avaliação gratuita e receba um planejamento digital personalizado do seu novo sorriso,
+        sem compromisso e sem custo.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" id="cta-final-whatsapp"
+           class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-base font-semibold transition-all duration-300"
+           style="background: linear-gradient(135deg, #b8902a, #d4ac50); color:#1a0a2e; box-shadow: 0 8px 32px -8px rgba(212,172,80,0.5);"
+           onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 16px 48px -8px rgba(212,172,80,0.6)'"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px -8px rgba(212,172,80,0.5)'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Agendar pelo WhatsApp</span>
+        </a>
+        <a href="tel:+5511999999999" id="cta-final-tel"
+           class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-base font-semibold transition-all duration-300"
+           style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.20); color:#fdf5e0;"
+           onmouseover="this.style.background='rgba(255,255,255,0.14)'"
+           onmouseout="this.style.background='rgba(255,255,255,0.08)'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>(11) 99999-9999</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer id="contato" class="footer-bg py-20" aria-label="Rodapé e informações de contato">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+        <!-- Coluna 1: Logo & Resumo -->
+        <div class="lg:col-span-1 flex flex-col gap-5">
+          <a href="#" class="flex items-center gap-3" aria-label="Lumina Odontologia">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center"
+                 style="background: linear-gradient(135deg, #2d1050, #4f2591);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.5 2 6 4.5 6 8c0 2 .8 3.8 2 5l2 8h4l2-8c1.2-1.2 2-3 2-5 0-3.5-2.5-6-6-6z" fill="#e8cc7a" opacity="0.9"/>
+                <circle cx="12" cy="8" r="2" fill="white" opacity="0.7"/>
+              </svg>
+            </div>
+            <div>
+              <span class="font-serif text-xl font-semibold tracking-tight" style="color:#fdf5e0;">Lumina</span>
+              <span class="block text-[10px] font-sans font-500 tracking-widest uppercase -mt-0.5" style="color:#e8cc7a; opacity:0.7;">Odontologia Premium</span>
+            </div>
+          </a>
+          <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,0.45); font-weight:300;">
+            Transformando sorrisos com arte, tecnologia e cuidado humano há mais de 12 anos.
+          </p>
+
+          <!-- Redes Sociais -->
+          <div class="flex items-center gap-3" role="list" aria-label="Redes Sociais">
+            <!-- Instagram -->
+            <a href="#" class="social-icon" aria-label="Instagram da Clínica Lumina" role="listitem">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="#" class="social-icon" aria-label="Facebook da Clínica Lumina" role="listitem">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="#" class="social-icon" aria-label="YouTube da Clínica Lumina" role="listitem">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9.75 15.02l5.75-3.02-5.75-3.02v6.04z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Especialidades -->
+        <div class="flex flex-col gap-4">
+          <h4 class="font-serif text-base font-semibold" style="color:#fdf5e0;">Especialidades</h4>
+          <ul class="flex flex-col gap-3" role="list">
+            <li><a href="#servicos" class="footer-link">Estética Dental & Lentes de Contato</a></li>
+            <li><a href="#servicos" class="footer-link">Ortodontia Invisível (Alinhadores)</a></li>
+            <li><a href="#servicos" class="footer-link">Implantodontia Avançada</a></li>
+            <li><a href="#servicos" class="footer-link">Harmonização Orofacial</a></li>
+            <li><a href="#servicos" class="footer-link">Smile Design Digital</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Links Rápidos -->
+        <div class="flex flex-col gap-4">
+          <h4 class="font-serif text-base font-semibold" style="color:#fdf5e0;">Links Rápidos</h4>
+          <ul class="flex flex-col gap-3" role="list">
+            <li><a href="#diferenciais" class="footer-link">Sobre a Dra. Isabela</a></li>
+            <li><a href="#depoimentos" class="footer-link">Depoimentos de Pacientes</a></li>
+            <li><a href="#" class="footer-link">Política de Privacidade</a></li>
+            <li><a href="#" class="footer-link">Termos de Uso</a></li>
+            <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="footer-link">Agendar pelo WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Contato -->
+        <div class="flex flex-col gap-5">
+          <h4 class="font-serif text-base font-semibold" style="color:#fdf5e0;">Contato & Localização</h4>
+
+          <div class="flex flex-col gap-4">
+            <!-- Endereço -->
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                   style="background: rgba(212,172,80,0.12); border: 1px solid rgba(212,172,80,0.20);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="#e8cc7a" stroke-width="1.5"/>
+                  <circle cx="12" cy="10" r="3" stroke="#e8cc7a" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium" style="color:rgba(255,255,255,0.75);">Rua das Flores, 842 — Sala 301</p>
+                <p class="text-xs mt-0.5" style="color:rgba(255,255,255,0.40);">Jardins, São Paulo — SP, 01422-001</p>
+              </div>
+            </div>
+
+            <!-- Telefone -->
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                   style="background: rgba(212,172,80,0.12); border: 1px solid rgba(212,172,80,0.20);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                        stroke="#e8cc7a" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div>
+                <a href="tel:+5511999999999" class="text-sm font-medium" style="color:rgba(255,255,255,0.75);">(11) 99999-9999</a>
+                <p class="text-xs mt-0.5" style="color:rgba(255,255,255,0.40);">Seg – Sex: 8h às 19h | Sáb: 8h às 13h</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                   style="background: rgba(212,172,80,0.12); border: 1px solid rgba(212,172,80,0.20);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#e8cc7a" stroke-width="1.5"/>
+                  <path d="M22 6l-10 7L2 6" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <a href="mailto:contato@luminaodonto.com.br" class="text-sm font-medium" style="color:rgba(255,255,255,0.75);">
+                contato@luminaodonto.com.br
+              </a>
+            </div>
+
+            <!-- CRO -->
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                   style="background: rgba(212,172,80,0.12); border: 1px solid rgba(212,172,80,0.20);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9 12l2 2 4-4" stroke="#e8cc7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium" style="color:rgba(255,255,255,0.75);">CRO-SP 98.765</p>
+                <p class="text-xs mt-0.5" style="color:rgba(255,255,255,0.40);">Dra. Isabela Monteiro — CD</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Barra inferior do Footer -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8"
+           style="border-top: 1px solid rgba(255,255,255,0.07);">
+        <p class="text-xs text-center md:text-left" style="color:rgba(255,255,255,0.30);">
+          © 2025 Clínica Lumina Odontologia Premium. Todos os direitos reservados.
+        </p>
+        <div class="flex items-center gap-1">
+          <div class="gold-dot" style="width:4px; height:4px;"></div>
+          <p class="text-xs" style="color:rgba(255,255,255,0.25);">
+            Desenvolvido com excelência e dedicação
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  </main>
+
+  <!-- ================================================================
+       JAVASCRIPT
+  ================================================================ -->
+  <script>
+    // ============================
+    // SCROLL REVEAL
+    // ============================
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // ============================
+    // HEADER SCROLL EFFECT
+    // ============================
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 24) {
+        header.style.boxShadow = '0 4px 32px -8px rgba(45,16,80,0.12)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+
+    // ============================
+    // MOBILE MENU TOGGLE
+    // ============================
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      if (isOpen) {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        menuBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // Fechar menu ao clicar em link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ============================
+    // CARROSSEL DE DEPOIMENTOS
+    // ============================
+    const track = document.getElementById('carousel-track');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    let current = 0;
+    const total = 2; // 2 slides
+    let autoSlideInterval;
+
+    function goToSlide(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === current);
+        dot.setAttribute('aria-selected', i === current ? 'true' : 'false');
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      goToSlide(current - 1);
+      resetAutoSlide();
+    });
+    nextBtn.addEventListener('click', () => {
+      goToSlide(current + 1);
+      resetAutoSlide();
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        goToSlide(parseInt(dot.dataset.index));
+        resetAutoSlide();
+      });
+    });
+
+    // Estilo hover nos botões do carrossel
+    [prevBtn, nextBtn].forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        btn.style.borderColor = 'rgba(212,172,80,0.50)';
+        btn.style.background = 'rgba(212,172,80,0.06)';
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.borderColor = 'rgba(45,16,80,0.20)';
+        btn.style.background = 'transparent';
+      });
+    });
+
+    // Auto slide
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(() => goToSlide(current + 1), 6000);
+    }
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+    startAutoSlide();
+
+    // Touch support
+    let touchStartX = 0;
+    const carouselEl = document.getElementById('testimonials-carousel');
+    carouselEl.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+    carouselEl.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        goToSlide(diff > 0 ? current + 1 : current - 1);
+        resetAutoSlide();
+      }
+    }, { passive: true });
+
+    // ============================
+    // SMOOTH SCROLL OFFSET (PARA NAV FIXA)
+    // ============================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 88; // altura da nav
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

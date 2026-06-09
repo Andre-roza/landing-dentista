@@ -1,0 +1,43 @@
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS metadata
+.DS_Store
+.DS_Store?
+._*
+
+# Environments and Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.pem
+*.key
+certs/
+
+# Dependencies and Build (if added later)
+node_modules/
+dist/
+build/
+out/
+.next/
+.nuxt/
